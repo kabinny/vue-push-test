@@ -10,6 +10,3 @@ self.addEventListener('notificationclick', function (event) {
     console.log('notificationclick event', event)
 })
 
-setInterval(() => {
-    console.log('콘솔 로그 10초 마다', self)
-}, 10000)
