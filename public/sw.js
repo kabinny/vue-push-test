@@ -7,3 +7,7 @@ self.addEventListener('push', function (event) {
 self.addEventListener('notificationclick', function (event) {
     console.log('notificationclick event', event)
 })
+
+setTimeout(() => {
+    console.log('콘솔 로그 10초 뒤')
+}, 10000)
