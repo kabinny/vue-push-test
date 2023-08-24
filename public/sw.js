@@ -10,3 +10,6 @@ self.addEventListener('notificationclick', function (event) {
     console.log('notificationclick event', event)
 })
 
+self.addEventListener('activate', () => {
+    console.log('activate event')
+})
