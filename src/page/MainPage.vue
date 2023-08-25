@@ -16,13 +16,18 @@ export default {
     }
   },
   mounted() {
-    this.requestPermission()
+    this.userPermission = Notification.permission
   },
   methods: {
     requestPermission() {
-      if ('Notification' in window && Notification && Notification.permission) {
-        this.userPermission = Notification.permission
+      if (!('Notification' in window)) {
+        alert('알림 지원 안됨')
+        return
       }
+      Notification.requestPermission(status => {
+        this.userPermission = Notification.permission
+      })
+
     }
   }
 };
