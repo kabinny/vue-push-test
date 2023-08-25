@@ -25,7 +25,7 @@ export default {
         return
       }
       Notification.requestPermission(status => {
-        this.userPermission = Notification.permission
+        this.userPermission = status
       })
 
     }
