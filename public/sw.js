@@ -9,16 +9,22 @@ function asyncConsoleLog(message) {
 }
 
 self.addEventListener('push', function (event) {
-    asyncConsoleLog('push event')
+    event.waitUntil(
+        asyncConsoleLog('push event')
+    )
     // console.log('push event', event)
 })
 
 self.addEventListener('notificationclick', function (event) {
-    asyncConsoleLog('notificationclick event')
+    event.waitUntil(
+        asyncConsoleLog('notificationclick event')
+    )
     // console.log('notificationclick event', event)
 })
 
 self.addEventListener('activate', () => {
-    asyncConsoleLog('activate event')
+    event.waitUntil(
+        asyncConsoleLog('activate event')
+    )
     // console.log('activate event')
 })
